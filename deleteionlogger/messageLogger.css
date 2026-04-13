@@ -1,0 +1,76 @@
+.messagelogger-deleted [class*="buttons"] {
+    display: none;
+}
+
+.messagelogger-deleted
+:is(
+    .messagelogger-deleted-attachment,
+    .emoji,
+    [data-type="sticker"],
+    [class*="embedIframe"],
+    [class*="embedSpotify"],
+    [class*="imageContainer"]
+) {
+    filter: grayscale(1) !important;
+    transition: 150ms filter ease-in-out;
+
+    &[class*="hiddenMosaicItem"] {
+        filter: grayscale(1) blur(var(--custom-message-attachment-spoiler-blur-radius, 44px)) !important;
+    }
+
+    &:hover {
+        filter: grayscale(0) !important;
+    }
+}
+
+.messagelogger-deleted [class*="spoilerWarning"] {
+    color: var(--status-danger);
+}
+
+.theme-dark .messagelogger-edited {
+    filter: brightness(80%);
+}
+
+.theme-light .messagelogger-edited {
+    opacity: 0.5;
+}
+
+.messagelogger-edit-marker {
+    cursor: pointer;
+}
+
+.messagelogger-delete-timestamp {
+    font-size: 0.75rem;
+    margin-top: 4px;
+    opacity: 0.8;
+}
+
+.vc-ml-modal-timestamp {
+    cursor: unset;
+    height: unset;
+}
+
+.vc-ml-modal-tab-bar {
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.vc-ml-modal-head {
+    gap: 8px;
+    align-items: center;
+}
+
+.vc-ml-diff-add {
+    background: hsl(130 60% 50% / 30%);
+    border-radius: 2px;
+    outline: 1px solid hsl(130 60% 45% / 60%);
+    padding: 0 1px;
+}
+
+.vc-ml-diff-remove {
+    background: hsl(0 70% 55% / 30%);
+    text-decoration: line-through;
+    border-radius: 2px;
+    outline: 1px solid hsl(0 70% 50% / 60%);
+    padding: 0 1px;
+}
